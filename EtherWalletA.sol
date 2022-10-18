@@ -21,7 +21,7 @@ contract EtherWallet {
         payable(msg.sender).transfer(_amount);
     }
 
-    function senderWithdrawal(uint _amount) external payable{
+    function userWithdrawal(uint _amount) external payable{
         require(msg.sender == user , "caller is not user");
         require(msg.value <= _amount, "User can not withdraw more than amount deposited");
         payable(msg.sender).transfer(_amount);
